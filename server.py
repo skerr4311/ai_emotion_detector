@@ -11,10 +11,8 @@ def index():
 def detect_emotion():
     text_to_analyze = request.args.get('textToAnalyze') or request.form.get('textToAnalyze')
     
-    print("Received text:", text_to_analyze)
-    
     if not text_to_analyze:
-        return "No text provided.", 400
+        return "Invalid text! Please try again!"
     
     result = emotion_detector(text_to_analyze)
     
